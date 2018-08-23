@@ -51,8 +51,7 @@ const ToneBox = ({ toneResult }) => {
     content = (<div className={classes.graphsContainer}>
       {toneResult.map((emotion, i) =>
         <div key={i} className={classes.sentiment}>
-          <div className={classes.label}>{emotion.tone_name} -
-          ${tone_nameFR[emotion.tone_name]}</div>
+          <div className={classes.label}>{tone_nameFR[emotion.tone_name]}</div>
           <div className={classes.graphWrapper}>
             <div className={classes.percentage}>
               <div>{(emotion.score * 100).toFixed()}%</div>
