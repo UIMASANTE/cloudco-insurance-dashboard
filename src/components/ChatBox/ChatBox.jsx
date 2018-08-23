@@ -16,11 +16,7 @@ const ChatBox = ({ time, log, user }) => (
   <Card className={classes.container}>
     <CardHeader
       title="LOG CONVERSATION"
-      subtitle={`Début: ${new Intl.DateTimeFormat('fr-FR', { 
-          year: 'numeric', 
-          month: 'long', 
-          day: '2-digit' 
-        }).format(time)}`}
+      subtitle={`Début: ${time.toLocaleDateString()}`}
       style={styles.header}
     />
     <MessageList user={user} log={log} />
