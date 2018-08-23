@@ -13,7 +13,7 @@ const formatName = ({ fname, lname }) => (fname
 );
 
 const overallSentiment = toneResult => (
-  toneResult.concat().sort((a, b) => b.score - a.score)[0].tone_name === 'Joy' ? 'Positive' : 'Negative'
+  toneResult.concat().sort((a, b) => b.score - a.score)[0].tone_name === 'Joy' ? 'Positif' : 'Négatif'
 );
 
 const timeFormat = 'MMM Do, h:mm a';
@@ -24,7 +24,7 @@ const ConversationWindow = ({ conversation, toneResult, deleteLogAndRefresh }) =
       email={conversation.owner}
       sentiment={toneResult.toneSummary.length > 0
         ? overallSentiment(toneResult.toneSummary)
-        : 'Not Enough Data'
+        : 'Pas assez de donnée'
       }
     />
     <div className={classes.chatWrapper}>
@@ -38,7 +38,7 @@ const ConversationWindow = ({ conversation, toneResult, deleteLogAndRefresh }) =
     <ToneHistory toneHistory={toneResult.toneHistory || null} />
     <div className={classes.deleteWrapper}>
       <RaisedButton
-        label="Delete Conversation"
+        label="Supprimez la conversation"
         onClick={() => deleteLogAndRefresh(conversation.conversation)}
       />
     </div>
