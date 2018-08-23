@@ -32,13 +32,13 @@ const styles = {
 const formatName = ({ fname, lname }) => (fname ? `${fname} ${lname}` : 'John Doe');
 const formatDate = (date) => (
   <span style={styles.secondaryText}>
-    {moment(date).format('MMM Do, h:mm a')}
+    {moment(date).format('DD/MM/YYYY HH:mm')}
   </span>
 );
 
 const ChatList = ({ conversations, selected, selectConversation }) => (
   <List className={classes.list}>
-    <Subheader style={styles.header} inset={false}>ALL CHATS ({conversations.length})</Subheader>
+    <Subheader style={styles.header} inset={false}>TOUTES CONVERSATIONS ({conversations.length})</Subheader>
     <div className={classes.itemsWrapper}>
       {conversations.map((conversation, i) =>
         <ListItem
