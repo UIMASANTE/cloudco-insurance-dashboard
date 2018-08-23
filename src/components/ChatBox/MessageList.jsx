@@ -5,7 +5,7 @@ import FontIcon from 'material-ui/FontIcon';
 import { palette } from 'styles/muiTheme';
 import classes from './ChatBox.scss';
 
-const formatTime = (date) => moment(date).format('h:mma');
+const formatTime = (date) => moment(date).format('HH:mm');
 
 const styles = {
   icon: {
@@ -24,7 +24,7 @@ const MessageList = ({ user, log }) => (
               {message.trainingNeeded ?
                 <span className={classes.trainingMsg}>
                   <FontIcon style={styles.icon} className="fa fa-exclamation-triangle" color={palette.primary2Color} />
-                  TRAINING NEEDED
+                  APPRENTISSAGE REQUIS
                 </span>
                 : ''
               }
