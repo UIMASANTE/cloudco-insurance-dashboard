@@ -119,7 +119,7 @@ class HomeView extends React.Component {
     else if (loaded) {
       conversationWindow = (
         <div className={classes.centeredContainer}>
-          No Chat Found
+          Aucune conversation trouvée
         </div>
       );
     }
