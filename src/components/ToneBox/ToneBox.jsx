@@ -27,7 +27,17 @@ const graphColor = {
    "Tentative":5,
    "Analytical":6,
    "Confident":7
-}
+};
+
+const tone_nameFR = {
+   "Anger":"Colère",
+   "Joy":"Joie",
+   "Sadness":"Tristesse",
+   "Fear":"Crainte",
+   "Tentative":"Surprise",
+   "Analytical":"Analytique",
+   "Confident":"Sur de soi"
+};
 
 const ToneBox = ({ toneResult }) => {
   let content;
@@ -41,7 +51,8 @@ const ToneBox = ({ toneResult }) => {
     content = (<div className={classes.graphsContainer}>
       {toneResult.map((emotion, i) =>
         <div key={i} className={classes.sentiment}>
-          <div className={classes.label}>{emotion.tone_name}</div>
+          <div className={classes.label}>{emotion.tone_name} -
+          ${tone_nameFR[emotion.tone_name]}</div>
           <div className={classes.graphWrapper}>
             <div className={classes.percentage}>
               <div>{(emotion.score * 100).toFixed()}%</div>
@@ -61,7 +72,7 @@ const ToneBox = ({ toneResult }) => {
     </div>);
   }
   return (<Card containerStyle={styles.container} className={classes.container}>
-    <CardHeader style={styles.header} title="ALL SENTIMENTS" />
+    <CardHeader style={styles.header} title="TOUS SENTIMENTS" />
     {content}
   </Card>);
 };
