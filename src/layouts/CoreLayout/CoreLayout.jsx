@@ -7,7 +7,7 @@ export const CoreLayout = ({ children }) => (
   <div className={classes.layoutWrapper}>
     <div className={classes.appBar}>
       <img className={classes.logo} src="/logo.svg" role="presentation" />
-      <span className={classes.title}>Cloud Insurance Co</span>
+      <span className={classes.title}>Assurance Service Internet</span>
     </div>
     <div className={classes.mainContainer}>
       <FakeActionsPane />
