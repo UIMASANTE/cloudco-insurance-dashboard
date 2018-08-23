@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 import Card from 'components/Card';
 import CardHeader from 'components/CardHeader';
 import { palette } from 'styles/muiTheme';
@@ -13,13 +12,15 @@ const styles = {
   },
 };
 
-const formatTime = (time) => moment(time).format('DD/MM/YYYY HH:mm');
-
 const ChatBox = ({ time, log, user }) => (
   <Card className={classes.container}>
     <CardHeader
       title="LOG CONVERSATION"
-      subtitle={`Début: ${formatTime(time)}`}
+      subtitle={`Début: ${new Intl.DateTimeFormat('fr-FR', { 
+          year: 'numeric', 
+          month: 'long', 
+          day: '2-digit' 
+        }).format(time)}`}
       style={styles.header}
     />
     <MessageList user={user} log={log} />
