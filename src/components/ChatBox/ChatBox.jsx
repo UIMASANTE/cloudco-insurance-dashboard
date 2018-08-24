@@ -8,8 +8,8 @@ import classes from './ChatBox.scss';
 const styles = {
   header: {
     borderBottom: `1px solid ${palette.accent1Color}`,
-    marginBottom: '1rem',
-  },
+    marginBottom: '1rem'
+  }
 };
 
 const ChatBox = ({ time, log, user }) => (
@@ -26,7 +26,7 @@ const ChatBox = ({ time, log, user }) => (
 ChatBox.propTypes = {
   user: React.PropTypes.string.isRequired,
   log: React.PropTypes.array.isRequired,
-  time: React.PropTypes.string.isRequired,
+  time: React.PropTypes.string.isRequired//,
 };
 
 export default ChatBox;
